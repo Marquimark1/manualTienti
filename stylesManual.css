@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    background-color: #0b1721;
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.containerManual{
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+}
+
+.imagenTodoSmrt img{
+    width: 200px;
+    position: absolute;
+    top: 100px;
+    left: 500px;
+}
+
+.imagenConejo img{
+    margin-top: 80px;
+}
+footer{
+    position: absolute;
+    bottom: -50px;
+    width: 100%;
+    text-align: center;
+    margin-top: 100px;
+    color: wheat;
+    font-size: 10px;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+}
