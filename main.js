@@ -1,33 +1,29 @@
 
-const dataCliente = document.querySelector('#datosImportantes');
 
-dataCliente.addEventListener('submit', recibeInformacion);
+const datosImportantes = document.querySelector('#datosImportantes');
+const datoEjecutivo = document.querySelector('.datoEjecutivo');
+// console.log(datoEjecutivo);
 
-function recibeInformacion(event){
+datosImportantes.addEventListener('submit',mostrarData);
+
+function mostrarData(event){
     event.preventDefault();
-    const formulario = new FormData(this);
+    const dataImport = new FormData(this);
     navigator.clipboard.writeText(`
-    Nombre : ${formulario.get('nombreEjecutivo')}
-    Cedula : ${formulario.get('minEjecutivo')};
-`)
+    Nombre : ${dataImport.get('nombreEjecutivo')}
+    Min : ${dataImport.get('minEjecutivo')}
+    `)    
+
     .then(() => {
-        // alert('Texto copiado al portapapeles')
-        cajaModal();
+        salidaManual(dataImport.get('nombreEjecutivo'),dataImport.get('minEjecutivo'));
     })
     .catch(err => {
         alert('Error al copiar al portapapeles:', err)
+        console.log( err );
         // console.error('Error al copiar al portapapeles:', err)
     })
 }
 
-function cajaModal(){
-    const cajaModal = document.querySelector('.cajaModal');
-    cajaModal.setAttribute('style', 'display: flex;flex-direction: column' );
-    const cerrarModal = document.querySelector('.cerrarModal');
-    dataCliente.setAttribute('style', 'visibility: hidden');
-    cerrarModal.addEventListener('click', function(){
-        cajaModal.setAttribute('style','display: none');
-        dataCliente.setAttribute('style', 'visibility: visible');
-    })
+function salidaManual(nombre, min){
+        window.location.href = './content/manual.html';
 }
-
