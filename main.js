@@ -10,8 +10,12 @@ function muestraData(event){
     const dataImport = new FormData(this);
     dataImport.get('nombreEjecutivo')
     const numeroEjecutivo = dataImport.get('minEjecutivo')
-    window.location.href = './content/manual.html';
+    window.location.href = './manual.html';
 }
+
+
+
+
 
 
 // function mostrarData(event){
